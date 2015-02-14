@@ -96,7 +96,7 @@ void Dialog::createImageSizeGroupBox()
 
   sizeDial = new QDial;  
   imageSizeLCD = new QLCDNumber;
-  connect(sizeDial,SIGNAL(valueChanged(int)),imageSizeLCD,SLOT(setValue(int))
+  connect(sizeDial,SIGNAL(valueChanged(int)),imageSizeLCD,SLOT(setValue(int));
 
   sizeDial->setMinimum(50);
   sizeDial->setMaximum(100);
