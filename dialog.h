@@ -28,7 +28,8 @@
 
  public:
      Dialog();
-
+  private slots:
+    void UpdateMethodLineEdit();
  private:
      void createMenu();
      void createMethodGroupBox();
@@ -36,6 +37,7 @@
      void createImageBrightnessGroupBox();
   void createColorGroupBox();
      void createLandscapeGroupBox();
+    void setMethodEdit(int id);
 
      enum { NumGridRows = 3, NUM_BUTTONS = 6 };
      
@@ -46,6 +48,7 @@
      QGroupBox *imageBrightnessGroupBox;
      QGroupBox *colorGroupBox;
      QGroupBox *landscapeGroupBox;
+  QLineEdit methodEdit;
 
   QComboBox *colorRepComboBox;     
   QTabBar *colorRepTabBar;

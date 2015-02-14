@@ -10,6 +10,7 @@
 #include <QComboBox>
 #include <QList>
 #include <QTabBar>
+#include <QPushButton>
  class QAction;
  class QDialogButtonBox;
  class QGroupBox;
@@ -27,7 +28,12 @@
 
  public:
      Dialog();
-
+  private slots:
+    void Method1Selected() { setMethodEdit(1); }
+    void Method2Selected() { setMethodEdit(2); }
+    void Method3Selected() { setMethodEdit(3); }
+    void Method4Selected() { setMethodEdit(4); }
+    void Method5Selected() { setMethodEdit(5); }
  private:
      void createMenu();
      void createMethodGroupBox();
@@ -35,6 +41,7 @@
      void createImageBrightnessGroupBox();
   void createColorGroupBox();
      void createLandscapeGroupBox();
+    void setMethodEdit(int id);
 
      enum { NumGridRows = 3, NUM_BUTTONS = 6 };
      
@@ -45,7 +52,10 @@
      QGroupBox *imageBrightnessGroupBox;
      QGroupBox *colorGroupBox;
      QGroupBox *landscapeGroupBox;
-QComboBox *colorRepComboBox;     
+  QLineEdit methodEdit;
+
+  QComboBox *colorRepComboBox;     
+  QTabBar *colorRepTabBar;
      QDialogButtonBox *buttonBox;
 
      QMenu *fileMenu;

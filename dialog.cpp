@@ -19,7 +19,7 @@
 
      connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
      connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
-
+     connect(methodGroupBox, SIGNAL(clicked()), this, SLOT(updateMethodSelection());
      QVBoxLayout *mainLayout = new QVBoxLayout;
      mainLayout->setMenuBar(menuBar);
      mainLayout->addWidget(methodGroupBox);
@@ -45,6 +45,13 @@
      connect(exitAction, SIGNAL(triggered()), this, SLOT(accept()));
  }
 
+  void Dialog::UpdateMethodLineEdit()
+  {
+    for (int i = 0; i < NUM_BUTTONS; ++i) {
+      if (methodButtons[i]->isOn())
+        methodEdit->setText(i);
+    }
+  }
  void Dialog::createMethodGroupBox()
  {
    char methodLabels[] = {'A', 'B', 'C', 'D', 'E', 'F'};
@@ -56,12 +63,14 @@
      QVBoxLayout *layout = new QVBoxLayout;
      QHBoxLayout *buttonLayout = new QHBoxLayout;
      QFormLayout *formLayout = new QFormLayout;
-     formLayout->addRow(new QLabel(tr("Current Method:")), new QLineEdit);
+     *methodEdit = new QLineEdit;
+     formLayout->addRow(new QLabel(tr("Current Method:")), methodEdit);
     
      QString label;
      for (int i = 0; i < NUM_BUTTONS; ++i) {
        label = "Method &";
        methodButtons[i] = new QRadioButton(label.append(methodLabels[i]), this);
+      connect(methodButtons[i],SIGNAL(clicked()),this,SLOT(UpdateMethodLineEdit()));
          buttonLayout->addWidget(methodButtons[i]);
      }
      
@@ -119,7 +128,6 @@ void Dialog::createImageSizeGroupBox()
      
      layout->addRow(new QLabel(tr("Color Representation:")), colorRepComboBox);
      layout->addRow(new QLabel(tr("Current Setting:")), colorRepTabBar);
-     layout->addRow(new QLabel(tr("Line 3:")), new QSpinBox);
      colorGroupBox->setLayout(layout);
  }
 
