@@ -72,7 +72,7 @@
      for (int i = 0; i < NUM_BUTTONS; ++i) {
        label = "Method &";
        methodButtons[i] = new QRadioButton(label.append(methodLabels[i]), this);
-  //    connect(methodButtons[i],SIGNAL(clicked()),this,SLOT(UpdateMethodLineEdit()));
+      connect(methodButtons[i],SIGNAL(clicked()),this,SLOT(UpdateMethodLineEdit()));
          buttonLayout->addWidget(methodButtons[i]);
      }
      

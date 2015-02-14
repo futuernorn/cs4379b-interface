@@ -50,6 +50,7 @@
       if (methodButtons[i]->isChecked()) {
         //QString value = i;
         methodEdit->setText("updated");
+      }
     }
   }
 
