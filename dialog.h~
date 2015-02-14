@@ -29,11 +29,7 @@
  public:
      Dialog();
   private slots:
-    void Method1Selected() { setMethodEdit(1); }
-    void Method2Selected() { setMethodEdit(2); }
-    void Method3Selected() { setMethodEdit(3); }
-    void Method4Selected() { setMethodEdit(4); }
-    void Method5Selected() { setMethodEdit(5); }
+    void UpdateMethodLineEdit();
  private:
      void createMenu();
      void createMethodGroupBox();
