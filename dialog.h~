@@ -41,7 +41,7 @@
     void setMethodEdit(int id);
 
      enum { NumGridRows = 3, NUM_BUTTONS = 6 };
-     
+     char methodLabels[];
      QMenuBar *menuBar;
      QRadioButton *methodButtons[NUM_BUTTONS];
      QGroupBox *methodGroupBox;

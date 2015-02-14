@@ -4,7 +4,7 @@
 
  Dialog::Dialog()
  {
-   methodLabels[] = {'A', 'B', 'C', 'D', 'E', 'F'};
+   methodLabels << 'A' <<  'B' << 'C' << 'D' << 'E' << 'F';
      createMenu();
      createMethodGroupBox();
      createImageSizeGroupBox();
@@ -49,7 +49,7 @@
     for (int i = 0; i < NUM_BUTTONS; ++i) {
       if (methodButtons[i]->isChecked()) {
         //QString value = i;
-        methodEdit->setText(QString::fromStdString(methodLabels[i]));
+        methodEdit->setText(methodLabels[i]);
       }
     }
   }
