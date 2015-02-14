@@ -49,8 +49,8 @@
   {
     for (int i = 0; i < NUM_BUTTONS; ++i) {
       if (methodButtons[i]->isOn()) {
-        QString value = i;
-        methodEdit->setText(value);
+        //QString value = i;
+        methodEdit->setText("updated");
     }
   }
  void Dialog::createMethodGroupBox()
