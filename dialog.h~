@@ -10,7 +10,6 @@
 #include <QComboBox>
 #include <QList>
 #include <QTabBar>
-#include <QPushButton>
  class QAction;
  class QDialogButtonBox;
  class QGroupBox;
@@ -46,9 +45,7 @@
      QGroupBox *imageBrightnessGroupBox;
      QGroupBox *colorGroupBox;
      QGroupBox *landscapeGroupBox;
-
-  QComboBox *colorRepComboBox;     
-  QTabBar *colorRepTabBar;
+QComboBox *colorRepComboBox;     
      QDialogButtonBox *buttonBox;
 
      QMenu *fileMenu;
