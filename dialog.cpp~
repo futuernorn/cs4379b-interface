@@ -54,6 +54,11 @@
     }
   }
 
+  void Dialog::UpdateSizeLCD()
+  {
+    imageSizeLCD->display()
+  }
+
  void Dialog::createMethodGroupBox()
  {
    
@@ -88,12 +93,15 @@ void Dialog::createImageSizeGroupBox()
 {
   imageSizeGroupBox = new QGroupBox(tr("Image Size"));
   QFormLayout *layout = new QFormLayout;
-  QDial *sizeDial = new QDial;
+
+  sizeDial = new QDial;  
   imageSizeLCD = new QLCDNumber;
+  connect(sizeDial,SIGNAL(valueChanged(int)),imageSizeLCD,SLOT(setValue(int))
+
   sizeDial->setMinimum(50);
   sizeDial->setMaximum(100);
   layout->addRow(new QLabel(tr("Image Size:")), sizeDial);
-  layout->addRow(new QLabel(tr("Current Setting:")), new QLineEdit);
+  layout->addRow(new QLabel(tr("Current Setting:")), new imageSizeLCD);
   imageSizeGroupBox->setLayout(layout);
 }
 

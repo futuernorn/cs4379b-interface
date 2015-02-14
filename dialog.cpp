@@ -56,7 +56,7 @@
 
   void Dialog::UpdateSizeLCD()
   {
-    imageSizeLCD->display()
+    //imageSizeLCD->display()
   }
 
  void Dialog::createMethodGroupBox()
