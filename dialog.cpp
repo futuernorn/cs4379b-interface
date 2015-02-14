@@ -49,7 +49,7 @@
     for (int i = 0; i < NUM_BUTTONS; ++i) {
       if (methodButtons[i]->isChecked()) {
         //QString value = i;
-        methodEdit->setText("updated");
+        methodEdit->setText(QString::number(i););
       }
     }
   }
