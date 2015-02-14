@@ -110,9 +110,9 @@ void Dialog::createImageSizeGroupBox()
  {
      imageBrightnessGroupBox = new QGroupBox(tr("Image Brightness"));
      QFormLayout *layout = new QFormLayout;
-     QSlider *imageBrightnessSlider = new QSlider;
-     imageBrightnessProgressBar = new QProgressBar;
-    connect(imageBrightnessSlider,SIGNAL(valueChanged(int)),imageBrightnessProgressBar,SLOT(display(int)));
+     QSlider *brightnessSlider = new QSlider;
+     brightnessProgressBar = new QProgressBar;
+    connect(brightnessSlider,SIGNAL(valueChanged(int)),brightnessProgressBar,SLOT(display(int)));
      brightnessSlider->setOrientation(Qt::Horizontal);
      brightnessSlider->setTickPosition(QSlider::TicksBothSides);
      brightnessSlider->setTickInterval(10);
