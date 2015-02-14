@@ -4,7 +4,7 @@
 
  Dialog::Dialog()
  {
-   methodLabels << 'A' <<  'B' << 'C' << 'D' << 'E' << 'F';
+   methodLabels << "A" <<  "B" << "C" << "D" << "E" << "F";
      createMenu();
      createMethodGroupBox();
      createImageSizeGroupBox();
