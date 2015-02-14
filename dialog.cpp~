@@ -110,7 +110,7 @@ void Dialog::createImageSizeGroupBox()
  {
      imageBrightnessGroupBox = new QGroupBox(tr("Image Brightness"));
      QFormLayout *layout = new QFormLayout;
-     QSlider *brightnessSlider = new QSlider;
+     brightnessSlider = new QSlider;
      brightnessProgressBar = new QProgressBar;
     connect(brightnessSlider,SIGNAL(valueChanged(int)),brightnessProgressBar,SLOT(display(int)));
      brightnessSlider->setOrientation(Qt::Horizontal);
