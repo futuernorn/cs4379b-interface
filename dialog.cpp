@@ -63,7 +63,7 @@
      QVBoxLayout *layout = new QVBoxLayout;
      QHBoxLayout *buttonLayout = new QHBoxLayout;
      QFormLayout *formLayout = new QFormLayout;
-     *methodEdit = new QLineEdit;
+     methodEdit = new QLineEdit;
      formLayout->addRow(new QLabel(tr("Current Method:")), methodEdit);
     
      QString label;

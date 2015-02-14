@@ -49,7 +49,7 @@
   {
     for (int i = 0; i < NUM_BUTTONS; ++i) {
       if (methodButtons[i]->isOn())
-        
+        methodEdit->setText(i);
     }
   }
  void Dialog::createMethodGroupBox()
