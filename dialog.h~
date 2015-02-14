@@ -48,7 +48,7 @@
      QGroupBox *imageBrightnessGroupBox;
      QGroupBox *colorGroupBox;
      QGroupBox *landscapeGroupBox;
-  QLineEdit methodEdit;
+  QLineEdit *methodEdit;
 
   QComboBox *colorRepComboBox;     
   QTabBar *colorRepTabBar;
