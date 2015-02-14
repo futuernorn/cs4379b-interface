@@ -51,7 +51,7 @@
     QDial *sizeDial;
      QLCDNumber *imageSizeLCD;
      QGroupBox *imageBrightnessGroupBox;
-    QProgressBar *imageBrightnessProgressBar;
+    QProgressBar *brightnessProgressBar;
      QGroupBox *colorGroupBox;
      QGroupBox *landscapeGroupBox;
   QLineEdit *methodEdit;
