@@ -48,8 +48,9 @@
   void Dialog::UpdateMethodLineEdit()
   {
     for (int i = 0; i < NUM_BUTTONS; ++i) {
-      if (methodButtons[i]->isOn())
-        methodEdit->setText(i);
+      if (methodButtons[i]->isOn()) {
+        QString value = i;
+        methodEdit->setText(value);
     }
   }
  void Dialog::createMethodGroupBox()
