@@ -12,9 +12,7 @@
   createColorGroupBox();
      createLandscapeGroupBox();
 
-     bigEditor = new QTextEdit;
-     bigEditor->setPlainText(tr("This widget takes up all the remaining space "
-                                "in the top-level layout."));
+
 
      buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok
                                       | QDialogButtonBox::Cancel);

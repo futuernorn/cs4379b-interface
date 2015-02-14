@@ -27,8 +27,9 @@
      mainLayout->addWidget(methodGroupBox);
      mainLayout->addWidget(imageSizeGroupBox);
      mainLayout->addWidget(imageBrightnessGroupBox);
-     mainLayout->addWidget(formGroupBox);
-     mainLayout->addWidget(bigEditor);
+     mainLayout->addWidget(colorGroupBox);
+     mainLayout->addWidget(landscapeGroupBox);
+ //    mainLayout->addWidget(bigEditor);
      mainLayout->addWidget(buttonBox);
      setLayout(mainLayout);
 
