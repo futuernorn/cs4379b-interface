@@ -56,7 +56,7 @@
 
   void Dialog::UpdateSizeLCD()
   {
-    imageSizeLCD->display()
+    //imageSizeLCD->display()
   }
 
  void Dialog::createMethodGroupBox()
@@ -101,7 +101,7 @@ void Dialog::createImageSizeGroupBox()
   sizeDial->setMinimum(50);
   sizeDial->setMaximum(100);
   layout->addRow(new QLabel(tr("Image Size:")), sizeDial);
-  layout->addRow(new QLabel(tr("Current Setting:")), new imageSizeLCD);
+  layout->addRow(new QLabel(tr("Current Setting:")), imageSizeLCD);
   imageSizeGroupBox->setLayout(layout);
 }
 
