@@ -66,7 +66,7 @@
      QHBoxLayout *buttonLayout = new QHBoxLayout;
      QFormLayout *formLayout = new QFormLayout;
      methodEdit = new QLineEdit;
-      methodEdit->setText(methodLabels[1]);
+      methodEdit->setText(methodLabels[0]);
      formLayout->addRow(new QLabel(tr("Current Method:")), methodEdit);
     
      QString label;
