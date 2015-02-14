@@ -76,7 +76,7 @@
       connect(methodButtons[i],SIGNAL(clicked()),this,SLOT(UpdateMethodLineEdit()));
          buttonLayout->addWidget(methodButtons[i]);
      }
-    methodButtons[0]->setEnabled(true);
+    methodButtons[0]->setChecked(true);
      
      layout->addLayout(buttonLayout);
      layout->addLayout(formLayout);
@@ -89,6 +89,7 @@ void Dialog::createImageSizeGroupBox()
   imageSizeGroupBox = new QGroupBox(tr("Image Size"));
   QFormLayout *layout = new QFormLayout;
   QDial *sizeDial = new QDial;
+  imageSizeLCD = new QLCDNumber;
   sizeDial->setMinimum(50);
   sizeDial->setMaximum(100);
   layout->addRow(new QLabel(tr("Image Size:")), sizeDial);

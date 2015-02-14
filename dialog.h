@@ -30,6 +30,7 @@
      Dialog();
   private slots:
     void UpdateMethodLineEdit();
+    void UpdateSizeLCD();
  private:
 //void UpdateMethodLineEdit();
      void createMenu();
@@ -47,6 +48,8 @@
      QRadioButton *methodButtons[NUM_BUTTONS];
      QGroupBox *methodGroupBox;
      QGroupBox *imageSizeGroupBox;
+    QDial *sizeDial;
+     QLCDNumber *imageSizeLCD;
      QGroupBox *imageBrightnessGroupBox;
      QGroupBox *colorGroupBox;
      QGroupBox *landscapeGroupBox;
