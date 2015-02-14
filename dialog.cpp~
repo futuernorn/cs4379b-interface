@@ -43,7 +43,7 @@
 
      connect(exitAction, SIGNAL(triggered()), this, SLOT(accept()));
  }
-
+/*
   void Dialog::UpdateMethodLineEdit()
   {
     for (int i = 0; i < NUM_BUTTONS; ++i) {
@@ -52,6 +52,7 @@
         methodEdit->setText("updated");
     }
   }
+*/
  void Dialog::createMethodGroupBox()
  {
    char methodLabels[] = {'A', 'B', 'C', 'D', 'E', 'F'};
@@ -70,7 +71,7 @@
      for (int i = 0; i < NUM_BUTTONS; ++i) {
        label = "Method &";
        methodButtons[i] = new QRadioButton(label.append(methodLabels[i]), this);
-      connect(methodButtons[i],SIGNAL(clicked()),this,SLOT(UpdateMethodLineEdit()));
+  //    connect(methodButtons[i],SIGNAL(clicked()),this,SLOT(UpdateMethodLineEdit()));
          buttonLayout->addWidget(methodButtons[i]);
      }
      

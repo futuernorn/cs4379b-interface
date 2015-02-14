@@ -29,7 +29,7 @@
  public:
      Dialog();
   private slots:
-    void UpdateMethodLineEdit();
+  //  void UpdateMethodLineEdit();
  private:
      void createMenu();
      void createMethodGroupBox();
