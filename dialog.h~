@@ -48,8 +48,10 @@
      QRadioButton *methodButtons[NUM_BUTTONS];
      QGroupBox *methodGroupBox;
      QGroupBox *imageSizeGroupBox;
+    QDial *sizeDial;
      QLCDNumber *imageSizeLCD;
      QGroupBox *imageBrightnessGroupBox;
+    QSlider *imageBrightnessSlider;
      QGroupBox *colorGroupBox;
      QGroupBox *landscapeGroupBox;
   QLineEdit *methodEdit;

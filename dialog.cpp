@@ -100,6 +100,7 @@ void Dialog::createImageSizeGroupBox()
 
   sizeDial->setMinimum(50);
   sizeDial->setMaximum(100);
+  imageSizeLCD->setPalette(Qt::red);
   layout->addRow(new QLabel(tr("Image Size:")), sizeDial);
   layout->addRow(new QLabel(tr("Current Setting:")), imageSizeLCD);
   imageSizeGroupBox->setLayout(layout);
@@ -109,7 +110,9 @@ void Dialog::createImageSizeGroupBox()
  {
      imageBrightnessGroupBox = new QGroupBox(tr("Image Brightness"));
      QFormLayout *layout = new QFormLayout;
-     QSlider *brightnessSlider = new QSlider;
+     QSlider *imageBrightnessSlider = new QSlider;
+     imageBrightnessProgressBar = new QProgressBar;
+    connect(imageBrightnessSlider,SIGNAL(valueChanged(int)),imageBrightnessProgressBar,SLOT(display(int)));
      brightnessSlider->setOrientation(Qt::Horizontal);
      brightnessSlider->setTickPosition(QSlider::TicksBothSides);
      brightnessSlider->setTickInterval(10);
@@ -117,7 +120,7 @@ void Dialog::createImageSizeGroupBox()
      brightnessSlider->setMinimum(0);
      brightnessSlider->setMaximum(255);
      layout->addRow(new QLabel(tr("Image Brightness:")), brightnessSlider);
-     layout->addRow(new QLabel(tr("Current Setting:")), new QLineEdit);
+     layout->addRow(new QLabel(tr("Current Setting:")), imageBrightnessProgressBar);
      imageBrightnessGroupBox->setLayout(layout);
  }
 
