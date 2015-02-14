@@ -133,7 +133,7 @@ void Dialog::createImageSizeGroupBox()
   buttonLayout->addWidget(portraitButton);
   buttonLayout->addWidget(landscapeBtn);
   layout->addRow(new QLabel(tr("Image Orientation:")), buttonLayout);
-  layout->addRow(new QLabel(tr("Current Setting:")), colorRepTabBar);
+  layout->addRow(new QLabel(tr("Current Setting:")), new QLineEdit);
 
   landscapeGroupBox->setLayout(layout);
 

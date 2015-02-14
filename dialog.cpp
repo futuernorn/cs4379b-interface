@@ -110,7 +110,7 @@ void Dialog::createImageSizeGroupBox()
   colorRepTabBar = new QTabBar;
   QListIterator<QString> i(list);
   while (i.hasNext()) {
-    QString currentOption = i.next()
+    QString currentOption = i.next();
       colorRepComboBox->addItem(currentOption);
       colorRepTabBar->addTab(currentOption);
   }
