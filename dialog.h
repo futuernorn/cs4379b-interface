@@ -31,7 +31,7 @@
   private slots:
   //  void UpdateMethodLineEdit();
  private:
-void UpdateMethodLineEdit()
+void UpdateMethodLineEdit();
      void createMenu();
      void createMethodGroupBox();
      void createImageSizeGroupBox();

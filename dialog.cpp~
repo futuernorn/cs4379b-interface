@@ -43,7 +43,7 @@
 
      connect(exitAction, SIGNAL(triggered()), this, SLOT(accept()));
  }
-/*
+
   void Dialog::UpdateMethodLineEdit()
   {
     for (int i = 0; i < NUM_BUTTONS; ++i) {
@@ -52,7 +52,7 @@
         methodEdit->setText("updated");
     }
   }
-*/
+
  void Dialog::createMethodGroupBox()
  {
    char methodLabels[] = {'A', 'B', 'C', 'D', 'E', 'F'};
