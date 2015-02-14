@@ -19,7 +19,6 @@
 
      connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
      connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
-     connect(methodGroupBox, SIGNAL(clicked()), this, SLOT(updateMethodSelection());
      QVBoxLayout *mainLayout = new QVBoxLayout;
      mainLayout->setMenuBar(menuBar);
      mainLayout->addWidget(methodGroupBox);

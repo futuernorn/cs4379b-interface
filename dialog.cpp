@@ -47,7 +47,7 @@
   void Dialog::UpdateMethodLineEdit()
   {
     for (int i = 0; i < NUM_BUTTONS; ++i) {
-      if (methodButtons[i]->isOn()) {
+      if (methodButtons[i]->isChecked()) {
         //QString value = i;
         methodEdit->setText("updated");
     }
