@@ -4,7 +4,7 @@
 
  Dialog::Dialog()
  {
-   methodLabels << 'A' <<  'B' << 'C' << 'D' << 'E' << 'F';
+   methodLabels << "A" <<  "B" << "C" << "D" << "E" << "F";
      createMenu();
      createMethodGroupBox();
      createImageSizeGroupBox();
@@ -76,6 +76,7 @@
       connect(methodButtons[i],SIGNAL(clicked()),this,SLOT(UpdateMethodLineEdit()));
          buttonLayout->addWidget(methodButtons[i]);
      }
+    methodButtons[0].
      
      layout->addLayout(buttonLayout);
      layout->addLayout(formLayout);

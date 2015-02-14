@@ -76,6 +76,7 @@
       connect(methodButtons[i],SIGNAL(clicked()),this,SLOT(UpdateMethodLineEdit()));
          buttonLayout->addWidget(methodButtons[i]);
      }
+    methodButtons[0].toggle(true);
      
      layout->addLayout(buttonLayout);
      layout->addLayout(formLayout);
