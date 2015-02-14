@@ -119,6 +119,8 @@ void Dialog::createImageSizeGroupBox()
      brightnessSlider->setSingleStep(1);
      brightnessSlider->setMinimum(0);
      brightnessSlider->setMaximum(255);
+      brightnessProgressBar->setMinimum(0);
+      brightnessProgressBar->setMaximum(255);
      layout->addRow(new QLabel(tr("Image Brightness:")), brightnessSlider);
      layout->addRow(new QLabel(tr("Current Setting:")), brightnessProgressBar);
      imageBrightnessGroupBox->setLayout(layout);
