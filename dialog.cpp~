@@ -4,7 +4,7 @@
 
  Dialog::Dialog()
  {
-   
+   methodLabels[] = {'A', 'B', 'C', 'D', 'E', 'F'};
      createMenu();
      createMethodGroupBox();
      createImageSizeGroupBox();
@@ -49,14 +49,14 @@
     for (int i = 0; i < NUM_BUTTONS; ++i) {
       if (methodButtons[i]->isChecked()) {
         //QString value = i;
-        methodEdit->setText(i);
+        methodEdit->setText(methodLabels[i]);
       }
     }
   }
 
  void Dialog::createMethodGroupBox()
  {
-   char methodLabels[] = {'A', 'B', 'C', 'D', 'E', 'F'};
+   
    
    
    methodGroupBox = new QGroupBox(tr("Visualization Method"));
@@ -66,6 +66,7 @@
      QHBoxLayout *buttonLayout = new QHBoxLayout;
      QFormLayout *formLayout = new QFormLayout;
      methodEdit = new QLineEdit;
+      methodEdit->setText(methodLabels[1]);
      formLayout->addRow(new QLabel(tr("Current Method:")), methodEdit);
     
      QString label;

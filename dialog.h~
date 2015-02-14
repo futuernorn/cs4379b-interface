@@ -29,9 +29,9 @@
  public:
      Dialog();
   private slots:
-  //  void UpdateMethodLineEdit();
+    void UpdateMethodLineEdit();
  private:
-void UpdateMethodLineEdit();
+//void UpdateMethodLineEdit();
      void createMenu();
      void createMethodGroupBox();
      void createImageSizeGroupBox();
