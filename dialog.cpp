@@ -104,7 +104,8 @@ void Dialog::createImageSizeGroupBox()
  {
      colorGroupBox = new QGroupBox(tr("Color Representation"));
      QFormLayout *layout = new QFormLayout;
-  QList<QString> colorRepOptions = ["R", "T", "S", "U"];
+  QList<QString> colorRepOptions;
+  colorRepOptions << "R" <<  "T" << "S" << "U";
 
   colorRepComboBox = new QComboBox;
   colorRepTabBar = new QTabBar;
