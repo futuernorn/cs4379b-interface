@@ -7,7 +7,10 @@ MainWindow::MainWindow()
   textEdit = new QTextEdit;
   
   globj = new GLobj(this);
-  setCentralWidget(globj);
+
+  QHBoxLayout *mainLayout = new QHBoxLayout(this);
+  mainLayout->addWidget(globj);
+  setCentralWidget(mainLayout);
   
   methodLabels << "A" <<  "B" << "C" << "D" << "E" << "F";
   colorRepOptions << "R" <<  "T" << "S" << "U";
