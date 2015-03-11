@@ -6,6 +6,8 @@
 
 #include <QMainWindow>
 
+class GLobj;
+
 class QAction;
 class QListWidget;
 class QMenu;
@@ -25,7 +27,7 @@ class QCheckBox;
 class MainWindow : public QMainWindow
 {
   Q_OBJECT
-
+  
  public:
   MainWindow();
 
@@ -48,9 +50,9 @@ class MainWindow : public QMainWindow
     void createStatusBar();
     void createDockWindows();
 
-    RenderArea *renderArea;
     QTextEdit *textEdit;
-     
+    GLobj *globj;
+    
     QMenu *fileMenu;
     QMenu *viewMenu;
     QMenu *helpMenu;
