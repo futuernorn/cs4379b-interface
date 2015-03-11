@@ -1,5 +1,6 @@
 #include <QtGui>
 
+#include "globj.h"
 #include "mainwindow.h"
 
 MainWindow::MainWindow()
@@ -8,9 +9,8 @@ MainWindow::MainWindow()
   
   globj = new GLobj(this);
 
-  QHBoxLayout *mainLayout = new QHBoxLayout(this);
-  mainLayout->addWidget(globj);
-  setCentralWidget(mainLayout);
+  
+  setCentralWidget(globj);
   
   methodLabels << "A" <<  "B" << "C" << "D" << "E" << "F";
   colorRepOptions << "R" <<  "T" << "S" << "U";
