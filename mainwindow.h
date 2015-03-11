@@ -48,6 +48,7 @@ class MainWindow : public QMainWindow
     void createStatusBar();
     void createDockWindows();
 
+    RenderArea *renderArea;
     QTextEdit *textEdit;
      
     QMenu *fileMenu;

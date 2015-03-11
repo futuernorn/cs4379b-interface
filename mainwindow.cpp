@@ -5,7 +5,8 @@
 MainWindow::MainWindow()
 {
   textEdit = new QTextEdit;
-  setCentralWidget(textEdit);
+  renderArea = new RenderArea;
+  setCentralWidget(renderArea);
   
   methodLabels << "A" <<  "B" << "C" << "D" << "E" << "F";
   colorRepOptions << "R" <<  "T" << "S" << "U";
