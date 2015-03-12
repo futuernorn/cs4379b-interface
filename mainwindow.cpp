@@ -9,8 +9,11 @@ MainWindow::MainWindow()
   
   globj = new GLobj(this);
 
-  
-  setCentralWidget(globj);
+  QWidget *mainWidget = new QWidget;
+  QHBoxLayout *mainLayout = new QHBoxLayout(this);
+    mainLayout->addWidget(globj);
+    mainWidget->setLayout(mainLayout);
+  setCentralWidget(mainWidget);
   
   methodLabels << "A" <<  "B" << "C" << "D" << "E" << "F";
   colorRepOptions << "R" <<  "T" << "S" << "U";
