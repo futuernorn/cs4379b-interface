@@ -59,6 +59,7 @@ void GLobj::paintGL()
     float radius = 0.5;
 
     //Draw a quad
+    /*
     glBegin(GL_QUADS);
         glColor3f (1.0, 0.0, 0.0);
         glVertex3f(-radius, -radius,  radius);
@@ -66,9 +67,10 @@ void GLobj::paintGL()
         glVertex3f( radius,  radius,  radius);
         glVertex3f(-radius,  radius,  radius);
     glEnd(); 
-
+    */
     glPointSize(5.0f);
     glBegin(GL_POINTS);
+        glColor3f (1.0, 0.0, 1.0);
         glVertex3f(1.0f, 1.0f, 1.0f);
     glEnd();
     glFlush ();
