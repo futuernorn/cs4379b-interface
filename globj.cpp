@@ -93,19 +93,19 @@ void GLobj::paintGL()
     glColor3f (0.25, 0.25, 1.0);
     glBegin(GL_POLYGON);
       glVertex3f(0.75f,0.75f,0.0f);
-      glVertex3f(1.0f,0.75f,0.0f);
-      glVertex3f(1.0f,1.0f,0.0f);
-      glVertex3f(0.75f,1.0f,0.0f);
+      glVertex3f(0.95f,0.95f,0.0f);
+      glVertex3f(0.95f,0.95f,0.0f);
+      glVertex3f(0.75f,0.95f,0.0f);
   glEnd();
 
     glColor3f (0.25, 1.0, 1.0);
     glBegin(GL_POLYGON);
-      glVertex3f(0.2f,0.30f,0.0f);
-      glVertex3f(0.3f,0.30f,0.0f);
-      glVertex3f(0.35f,0.25f,0.0f);
-      glVertex3f(0.3f,0.2f,0.0f);
-      glVertex3f(0.2f,0.2f,0.0f);
-      glVertex3f(0.15f,0.25f,0.0f);
+      glVertex3f(0.8f,0.90f,0.0f);
+      glVertex3f(0.9f,0.90f,0.0f);
+      glVertex3f(0.95f,0.85f,0.0f);
+      glVertex3f(0.9f,0.8f,0.0f);
+      glVertex3f(0.8f,0.8f,0.0f);
+      glVertex3f(0.75f,0.85f,0.0f);
     glEnd();
 
     glFlush ();
