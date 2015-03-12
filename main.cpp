@@ -8,7 +8,7 @@
  {
      QApplication app(argc, argv);
      MainWindow mainWin;
-     mainWin.resize( 1200, 1024 );
+     //mainWin.resize( 1200, 1024 );
      mainWin.show();
      return app.exec();
  }
