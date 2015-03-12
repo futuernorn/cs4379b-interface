@@ -70,7 +70,8 @@ void GLobj::paintGL()
     */
     glColor3f (1.0, 0.0, 1.0);
     glPointSize(4.0f);
-    glPointSize(5.0f);
+    glVertex3f(2.0f);
+    
 
     glBegin(GL_POINTS);
     glVertex3f(0.5f, 0.5f, 0.5f);
