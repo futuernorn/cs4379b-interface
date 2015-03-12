@@ -67,5 +67,9 @@ void GLobj::paintGL()
         glVertex3f(-radius,  radius,  radius);
     glEnd(); 
 
+    glPointSize(5.0f);
+    glBegin(GL_POINTS);
+        glVertex3f(1.0f, 1.0f, 1.0f);
+    glEnd();
     glFlush ();
 }
