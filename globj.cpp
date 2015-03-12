@@ -71,9 +71,15 @@ void GLobj::paintGL()
     glColor3f (1.0, 0.0, 1.0);
     glPointSize(4.0f);
     glPointSize(5.0f);
+
     glBegin(GL_POINTS);
-        
-        glVertex3f(0.5f, 0.5f, 0.5f);
+    glVertex3f(0.5f, 0.5f, 0.5f);
     glEnd();
+
+    glBegin(GL_LINES);
+    glVertex3f(0.2f, 0.2f, 0.2f);
+    glVertex3f(0.2f, 0.3f, 0.3f);
+    glEnd();
+
     glFlush ();
 }
