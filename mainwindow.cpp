@@ -8,12 +8,12 @@ MainWindow::MainWindow()
   textEdit = new QTextEdit;
   
   globj = new GLobj(this);
-
+/*
   QWidget *mainWidget = new QWidget;
   QHBoxLayout *mainLayout = new QHBoxLayout(this);
     mainLayout->addWidget(globj);
-    mainWidget->setLayout(mainLayout);
-  setCentralWidget(mainWidget);
+    mainWidget->setLayout(mainLayout);*/
+  setCentralWidget(globj);
   
   methodLabels << "A" <<  "B" << "C" << "D" << "E" << "F";
   colorRepOptions << "R" <<  "T" << "S" << "U";
@@ -22,7 +22,7 @@ MainWindow::MainWindow()
   createMenus();
   createDockWindows();
   createStatusBar();
-  setWindowTitle(tr("Assignment I2"));
+  setWindowTitle(tr("Assignment I3"));
 
 }
 
