@@ -56,7 +56,7 @@ void GLobj::paintGL()
     glClear (GL_COLOR_BUFFER_BIT);
     glClear(GL_DEPTH_BUFFER_BIT);
 
-    float radius = 0.5;
+    
 
     //Draw a quad
     /*
@@ -92,10 +92,10 @@ void GLobj::paintGL()
 
     glColor3f (0.25, 0.25, 1.0);
     glBegin(GL_POLYGON);
-      glVertex3f(0.75f,0.75f,0.0f);
-      glVertex3f(0.95f,0.95f,0.0f);
-      glVertex3f(0.95f,0.95f,0.0f);
-      glVertex3f(0.75f,0.95f,0.0f);
+      glVertex3f(-0.75f,-0.75f,0.0f);
+      glVertex3f(-0.95f,-0.75f,0.0f);
+      glVertex3f(-0.95f,-0.95f,0.0f);
+      glVertex3f(-0.75f,-0.95f,0.0f);
   glEnd();
 
     glColor3f (0.25, 1.0, 1.0);
