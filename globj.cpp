@@ -68,29 +68,45 @@ void GLobj::paintGL()
         glVertex3f(-radius,  radius,  radius);
     glEnd(); 
     */
-    glColor3f (1.0, 0.0, 1.0);
+
     glPointSize(4.0f);
     glLineWidth(20.0f);
     
-
+    glColor3f (1.0, 0.0, 1.0);
     glBegin(GL_POINTS);
     glVertex3f(0.5f, 0.5f, 0.5f);
     glEnd();
 
+    glColor3f (1.0, 0.25, 1.0);
     glBegin(GL_LINES);
     glVertex3f(0.2f, 0.2f, 0.2f);
     glVertex3f(0.2f, 0.3f, 0.3f);
     glEnd();
 
-        glBegin(GL_TRIANGLES);//start drawing triangles
-      glVertex3f(-1.0f,-0.25f,0.0f);//triangle one first vertex
-      glVertex3f(-0.5f,-0.25f,0.0f);//triangle one second vertex
-      glVertex3f(-0.75f,0.25f,0.0f);//triangle one third vertex
-      //drawing a new triangle
-      glVertex3f(0.5f,-0.25f,0.0f);//triangle two first vertex
-      glVertex3f(1.0f,-0.25f,0.0f);//triangle two second vertex
-      glVertex3f(0.75f,0.25f,0.0f);//triangle two third vertex
-    glEnd();//end drawing of triangles
+    glColor3f (1.0, 1.0, 1.0);
+    glBegin(GL_TRIANGLES);
+    glVertex3f(-1.0f,-0.25f,0.0f);
+    glVertex3f(-0.5f,-0.25f,0.0f);
+    glVertex3f(-0.75f,0.25f,0.0f);  
+    glEnd();
+
+    glColor3f (0.25, 0.25, 1.0);
+    glBegin(GL_POLYGON);
+      glVertex3f(0.75f,0.75f,0.75f);
+      glVertex3f(1.0f,0.75f,0.75f);
+      glVertex3f(1.0f,1.0f,0.75f);
+      glVertex3f(1.0f,1.0f,1.0f);
+  glEnd();
+
+    glColor3f (0.25, 1.0, 1.0);
+    glBegin(GL_POLYGON);
+      glVertex3f(-0.5f,0.5f,0.0f);
+      glVertex3f(0.5f,0.5f,0.0f);
+      glVertex3f(1.0f,0.0f,0.0f);
+      glVertex3f(0.5f,-0.5f,0.0f);
+      glVertex3f(-0.5f,-0.5f,0.0f);
+      glVertex3f(-1.0f,0.0f,0.0f);
+    glEnd();
 
     glFlush ();
 }
