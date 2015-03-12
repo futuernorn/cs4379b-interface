@@ -13,6 +13,7 @@ MainWindow::MainWindow()
   QHBoxLayout *mainLayout = new QHBoxLayout(this);
     mainLayout->addWidget(globj);
     mainWidget->setLayout(mainLayout);*/
+  globj->setFixedSize(800, 800);
   setCentralWidget(globj);
   
   methodLabels << "A" <<  "B" << "C" << "D" << "E" << "F";
