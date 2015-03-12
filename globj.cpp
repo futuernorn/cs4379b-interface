@@ -112,45 +112,45 @@ void GLobj::paintGL()
       // Top face (y = 1.0f)
       // Define vertices in counter-clockwise (CCW) order with normal pointing out
       glColor3f(0.0f, 1.0f, 0.0f);     // Green
-      glVertex3f( 1.0f, 1.0f, -1.0f);
-      glVertex3f(-1.0f, 1.0f, -1.0f);
-      glVertex3f(-1.0f, 1.0f,  1.0f);
-      glVertex3f( 1.0f, 1.0f,  1.0f);
+      glVertex3f( 0.25f, 0.25f, -0.25f);
+      glVertex3f(-0.25f, 0.25f, -0.25f);
+      glVertex3f(-0.25f, 0.25f,  0.25f);
+      glVertex3f( 0.25f, 0.25f,  0.25f);
  
-      // Bottom face (y = -1.0f)
+      // Bottom face (y = -0.25f)
       glColor3f(1.0f, 0.5f, 0.0f);     // Orange
-      glVertex3f( 1.0f, -1.0f,  1.0f);
-      glVertex3f(-1.0f, -1.0f,  1.0f);
-      glVertex3f(-1.0f, -1.0f, -1.0f);
-      glVertex3f( 1.0f, -1.0f, -1.0f);
+      glVertex3f( 0.25f, -0.25f,  0.25f);
+      glVertex3f(-0.25f, -0.25f,  0.25f);
+      glVertex3f(-0.25f, -0.25f, -0.25f);
+      glVertex3f( 0.25f, -0.25f, -0.25f);
  
-      // Front face  (z = 1.0f)
+      // Front face  (z = 0.25f)
       glColor3f(1.0f, 0.0f, 0.0f);     // Red
-      glVertex3f( 1.0f,  1.0f, 1.0f);
-      glVertex3f(-1.0f,  1.0f, 1.0f);
-      glVertex3f(-1.0f, -1.0f, 1.0f);
-      glVertex3f( 1.0f, -1.0f, 1.0f);
+      glVertex3f( 0.25f,  0.25f, 0.25f);
+      glVertex3f(-0.25f,  0.25f, 0.25f);
+      glVertex3f(-0.25f, -0.25f, 0.25f);
+      glVertex3f( 0.25f, -0.25f, 0.25f);
  
       // Back face (z = -1.0f)
       glColor3f(1.0f, 1.0f, 0.0f);     // Yellow
-      glVertex3f( 1.0f, -1.0f, -1.0f);
-      glVertex3f(-1.0f, -1.0f, -1.0f);
-      glVertex3f(-1.0f,  1.0f, -1.0f);
-      glVertex3f( 1.0f,  1.0f, -1.0f);
+      glVertex3f( 0.25f, -0.25f, -0.25f);
+      glVertex3f(-0.25f, -0.25f, -0.25f);
+      glVertex3f(-0.25f,  0.25f, -0.25f);
+      glVertex3f( 0.25f,  0.25f, -0.25f);
  
-      // Left face (x = -1.0f)
+      // Left face (x = -0.25f)
       glColor3f(0.0f, 0.0f, 1.0f);     // Blue
-      glVertex3f(-1.0f,  1.0f,  1.0f);
-      glVertex3f(-1.0f,  1.0f, -1.0f);
-      glVertex3f(-1.0f, -1.0f, -1.0f);
-      glVertex3f(-1.0f, -1.0f,  1.0f);
+      glVertex3f(-0.25f,  0.25f,  0.25f);
+      glVertex3f(-0.25f,  0.25f, -0.25f);
+      glVertex3f(-0.25f, -0.25f, -0.25f);
+      glVertex3f(-0.25f, -0.25f,  0.25f);
  
-      // Right face (x = 1.0f)
+      // Right face (x = 0.25f)
       glColor3f(1.0f, 0.0f, 1.0f);     // Magenta
-      glVertex3f(1.0f,  1.0f, -1.0f);
-      glVertex3f(1.0f,  1.0f,  1.0f);
-      glVertex3f(1.0f, -1.0f,  1.0f);
-      glVertex3f(1.0f, -1.0f, -1.0f);
+      glVertex3f(0.25f,  0.25f, -0.25f);
+      glVertex3f(0.25f,  0.25f,  0.25f);
+      glVertex3f(0.25f, -0.25f,  0.25f);
+      glVertex3f(0.25f, -0.25f, -0.25f);
    glEnd();  // End of drawing color-cube
     
     glFlush ();
