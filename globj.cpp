@@ -56,22 +56,12 @@ void GLobj::paintGL()
     glClear (GL_COLOR_BUFFER_BIT);
     glClear(GL_DEPTH_BUFFER_BIT);
 
-    
 
-    //Draw a quad
-    /*
-    glBegin(GL_QUADS);
-        glColor3f (1.0, 0.0, 0.0);
-        glVertex3f(-radius, -radius,  radius);
-        glVertex3f( radius, -radius,  radius);
-        glVertex3f( radius,  radius,  radius);
-        glVertex3f(-radius,  radius,  radius);
-    glEnd(); 
-    */
+
 
     glPointSize(4.0f);
     glLineWidth(2.0f);
-    
+
     glColor3f (1.0, 0.0, 1.0);
     glBegin(GL_POINTS);
     glVertex3f(0.5f, 0.5f, 0.5f);
@@ -79,15 +69,15 @@ void GLobj::paintGL()
 
     glColor3f (1.0, 0.25, 1.0);
     glBegin(GL_LINES);
-    glVertex3f(0.2f, 0.2f, 0.2f);
-    glVertex3f(0.2f, 0.3f, 0.3f);
+    glVertex3f(0.4f, 0.4f, 0.2f);
+    glVertex3f(0.47f, 0.47f, 0.2f);
     glEnd();
 
     glColor3f (1.0, 1.0, 1.0);
     glBegin(GL_TRIANGLES);
     glVertex3f(-1.0f,-0.25f,0.0f);
     glVertex3f(-0.5f,-0.25f,0.0f);
-    glVertex3f(-0.75f,0.25f,0.0f);  
+    glVertex3f(-0.75f,0.25f,0.0f);
     glEnd();
 
     glColor3f (0.25, 0.25, 1.0);
