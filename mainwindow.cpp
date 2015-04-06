@@ -13,7 +13,7 @@ MainWindow::MainWindow()
   QHBoxLayout *mainLayout = new QHBoxLayout(this);
     mainLayout->addWidget(globj);
     mainWidget->setLayout(mainLayout);*/
-  globj->setFixedSize(800, 800);
+  globj->setFixedSize(600, 400);
   setCentralWidget(globj);
   
   methodLabels << "A" <<  "B" << "C" << "D" << "E" << "F";
@@ -23,7 +23,7 @@ MainWindow::MainWindow()
   createMenus();
   createDockWindows();
   createStatusBar();
-  setWindowTitle(tr("Assignment I3"));
+  setWindowTitle(tr("Assignment I4"));
 
 }
 
@@ -332,11 +332,13 @@ void MainWindow::UpdateColorTabBar()
 
 void MainWindow::UpdatePortraitCheckbox()
 {
+  globj->setFixedSize(600, 400);
   portraitCheckBox->setChecked(true);
   landscapeCheckBox->setChecked(false);
 }
 void MainWindow::UpdateLandscapeCheckbox()
 {
+  globj->setFixedSize(400, 600);
   portraitCheckBox->setChecked(false);
   landscapeCheckBox->setChecked(true);
 }
