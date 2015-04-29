@@ -61,7 +61,8 @@ void GLobj::paintGL()
 
     glPointSize(4.0f);
     glLineWidth(2.0f);
-methodA({1,2},1,1);
+    unsigned int data[2] = {2, 20};
+methodA(data,1,1);
      glFlush ();
 }
 
