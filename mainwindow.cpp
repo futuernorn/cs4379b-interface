@@ -319,7 +319,7 @@ void MainWindow::UpdateMethodLineEdit()
         QString text = QInputDialog::getText(this, tr("Please enter a SSM file's name."),
                                          tr("Filename:"), QLineEdit::Normal,
                                          tr("filename.ssm"), &ok);
-       } elseif (i == 4) {
+       } else if (i == 4) {
          QString text = QInputDialog::getText(this, tr("Please enter a PPM file's name."),
                                           tr("Filename:"), QLineEdit::Normal,
                                           tr("filename.ssm"), &ok);

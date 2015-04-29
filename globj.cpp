@@ -61,95 +61,14 @@ void GLobj::paintGL()
 
     glPointSize(4.0f);
     glLineWidth(2.0f);
-
-    glColor3f (1.0, 0.0, 1.0);
-    glBegin(GL_POINTS);
-    glVertex3f(0.5f, 0.5f, 0.5f);
-    glEnd();
-
-    glColor3f (1.0, 0.25, 1.0);
-    glBegin(GL_LINES);
-    glVertex3f(0.4f, 0.4f, 0.2f);
-    glVertex3f(0.47f, 0.47f, 0.2f);
-    glEnd();
-
-    glColor3f (1.0, 1.0, 1.0);
-    glBegin(GL_TRIANGLES);
-    glVertex3f(-1.0f,-0.25f,0.0f);
-    glVertex3f(-0.5f,-0.25f,0.0f);
-    glVertex3f(-0.75f,0.25f,0.0f);
-    glEnd();
-
-    glColor3f (0.25, 0.25, 1.0);
-    glBegin(GL_POLYGON);
-      glVertex3f(-0.75f,-0.75f,0.0f);
-      glVertex3f(-0.95f,-0.75f,0.0f);
-      glVertex3f(-0.95f,-0.95f,0.0f);
-      glVertex3f(-0.75f,-0.95f,0.0f);
-  glEnd();
-
-    glColor3f (0.25, 1.0, 1.0);
-    glBegin(GL_POLYGON);
-      glVertex3f(0.8f,0.90f,0.0f);
-      glVertex3f(0.9f,0.90f,0.0f);
-      glVertex3f(0.95f,0.85f,0.0f);
-      glVertex3f(0.9f,0.8f,0.0f);
-      glVertex3f(0.8f,0.8f,0.0f);
-      glVertex3f(0.75f,0.85f,0.0f);
-    glEnd();
-
-   glBegin(GL_QUADS);                // Begin drawing the color cube with 6 quads
-      // Top face (y = 1.0f)
-      // Define vertices in counter-clockwise (CCW) order with normal pointing out
-      glColor3f(0.0f, 1.0f, 0.0f);     // Green
-      glVertex3f( 0.25f, 0.25f, -0.25f);
-      glVertex3f(-0.25f, 0.25f, -0.25f);
-      glVertex3f(-0.25f, 0.25f,  0.25f);
-      glVertex3f( 0.25f, 0.25f,  0.25f);
-
-      // Bottom face (y = -0.25f)
-      glColor3f(1.0f, 0.5f, 0.0f);     // Orange
-      glVertex3f( 0.25f, -0.25f,  0.25f);
-      glVertex3f(-0.25f, -0.25f,  0.25f);
-      glVertex3f(-0.25f, -0.25f, -0.25f);
-      glVertex3f( 0.25f, -0.25f, -0.25f);
-
-      // Front face  (z = 0.25f)
-      glColor3f(1.0f, 0.0f, 0.0f);     // Red
-      glVertex3f( 0.25f,  0.25f, 0.25f);
-      glVertex3f(-0.25f,  0.25f, 0.25f);
-      glVertex3f(-0.25f, -0.25f, 0.25f);
-      glVertex3f( 0.25f, -0.25f, 0.25f);
-
-      // Back face (z = -1.0f)
-      glColor3f(1.0f, 1.0f, 0.0f);     // Yellow
-      glVertex3f( 0.25f, -0.25f, -0.25f);
-      glVertex3f(-0.25f, -0.25f, -0.25f);
-      glVertex3f(-0.25f,  0.25f, -0.25f);
-      glVertex3f( 0.25f,  0.25f, -0.25f);
-
-      // Left face (x = -0.25f)
-      glColor3f(0.0f, 0.0f, 1.0f);     // Blue
-      glVertex3f(-0.25f,  0.25f,  0.25f);
-      glVertex3f(-0.25f,  0.25f, -0.25f);
-      glVertex3f(-0.25f, -0.25f, -0.25f);
-      glVertex3f(-0.25f, -0.25f,  0.25f);
-
-      // Right face (x = 0.25f)
-      glColor3f(1.0f, 0.0f, 1.0f);     // Magenta
-      glVertex3f(0.25f,  0.25f, -0.25f);
-      glVertex3f(0.25f,  0.25f,  0.25f);
-      glVertex3f(0.25f, -0.25f,  0.25f);
-      glVertex3f(0.25f, -0.25f, -0.25f);
-   glEnd();  // End of drawing color-cube
-
-    glFlush ();
+methodA({1,2},1,1);
+     glFlush ();
 }
 
 void GLobj::methodA(unsigned int data[], int numSamples, int maxValue) {
     glBegin(GL_TRIANGLES);
-    glVertex3f(-1f,-1f,-1f);
+    glVertex3f(-1.0f,-1.0f,-1.0f);
     glVertex3f(-0.25f,-0.25f,-0.25f);
-    glVertex3f(-0.75f,-1f,-1f);
+    glVertex3f(-0.75f,-1.0f,-1.0f);
     glEnd();
 }
