@@ -6,7 +6,7 @@
 MainWindow::MainWindow()
 {
   textEdit = new QTextEdit;
-  
+
   globj = new GLobj(this);
 /*
   QWidget *mainWidget = new QWidget;
@@ -15,7 +15,7 @@ MainWindow::MainWindow()
     mainWidget->setLayout(mainLayout);*/
   globj->setFixedSize(600, 400);
   setCentralWidget(globj);
-  
+
   methodLabels << "A" <<  "B" << "C" << "D" << "E" << "F";
   colorRepOptions << "R" <<  "T" << "S" << "U";
 
@@ -36,15 +36,15 @@ void MainWindow::newFile()
   msgBox.setDefaultButton(QMessageBox::Ok);
   int ret = msgBox.exec();
   switch (ret) {
-  case QMessageBox::Ok:      
+  case QMessageBox::Ok:
     textEdit->setPlainText("");
-    break;   
+    break;
   case QMessageBox::Cancel:
     break;
-  default:       
+  default:
     break;
   }
-  
+
 }
 void MainWindow::open()
 {
@@ -119,7 +119,7 @@ void MainWindow::createActions()
   helpAct->setStatusTip(tr("Show the application's help dialog"));
   connect(helpAct, SIGNAL(triggered()), this, SLOT(help()));
 
-     
+
 }
 
 void MainWindow::createMenus()
@@ -130,13 +130,13 @@ void MainWindow::createMenus()
   fileMenu->addAction(saveAct);
   fileMenu->addSeparator();
   fileMenu->addAction(quitAct);
-     
+
   viewMenu = menuBar()->addMenu(tr("&View"));
   menuBar()->addSeparator();
 
   helpMenu = menuBar()->addMenu(tr("&Help"));
   helpMenu->addAction(helpAct);
-     
+
 }
 
 void MainWindow::createStatusBar()
@@ -148,31 +148,31 @@ void MainWindow::createDockWindows()
 {
   QDockWidget *dock = new QDockWidget(tr("Visualization Settings"), this);
   dock->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
-     
+
   QWidget *newWidget = new QWidget(this);
   createVisualSettingsGroupBox();
   newWidget->setLayout(visualSettingsLayout);
   dock->setWidget(newWidget);
- 
+
   addDockWidget(Qt::LeftDockWidgetArea, dock);
   viewMenu->addAction(dock->toggleViewAction());
 
 
-     
+
   dock = new QDockWidget(tr("Image Settings"), this);
   newWidget = new QWidget(this);
   createImageSettingsGroupBox();
- 
- 
+
+
   newWidget->setLayout(imageSettingsLayout);
   dock->setWidget(newWidget);
- 
+
   addDockWidget(Qt::LeftDockWidgetArea, dock);
   viewMenu->addAction(dock->toggleViewAction());
 
 }
 
-void MainWindow::createVisualSettingsGroupBox() 
+void MainWindow::createVisualSettingsGroupBox()
 {
   visualSettingsLayout = new QVBoxLayout;
   methodGroupBox = new QGroupBox(tr("Visualization Method"));
@@ -180,12 +180,12 @@ void MainWindow::createVisualSettingsGroupBox()
   QVBoxLayout *methodLayout = new QVBoxLayout;
   QHBoxLayout *buttonLayout = new QHBoxLayout;
   QFormLayout *formLayout = new QFormLayout;
-  
+
   // initialize method display widget
   methodEdit = new QLineEdit;
-  methodEdit->setText(methodLabels[0]); 
+  methodEdit->setText(methodLabels[0]);
   formLayout->addRow(new QLabel(tr("Current Method:")), methodEdit);
-  
+
   QString label;
   for (int i = 0; i < NUM_BUTTONS; ++i) {
     label = "Method &";
@@ -196,24 +196,24 @@ void MainWindow::createVisualSettingsGroupBox()
   }
   // select the first method by default
   methodButtons[0]->setChecked(true);
-  
+
   methodLayout->addLayout(buttonLayout);
   methodLayout->addLayout(formLayout);
-  
+
   methodGroupBox->setLayout(methodLayout);
 
 
   colorGroupBox = new QGroupBox(tr("Color Representation"));
-  QFormLayout *colorLayout = new QFormLayout;  
-  
+  QFormLayout *colorLayout = new QFormLayout;
+
   colorRepComboBox = new QComboBox;
   colorRepTabBar = new QTabBar;
-  
+
   // Change the selected tab for our display upon a new combo box option being selected
   connect(colorRepComboBox,SIGNAL(activated(QString)),this,SLOT(UpdateColorTabBar()));
-  
+
   QListIterator<QString> i(colorRepOptions);
-  int indexCount = 0;  
+  int indexCount = 0;
   // Loop through possible representation options creating a select option and tab for value
   while (i.hasNext()) {
     QString currentOption = i.next();
@@ -221,8 +221,8 @@ void MainWindow::createVisualSettingsGroupBox()
     colorRepTabBar->addTab(currentOption);
     colorRepTabBar->setTabEnabled(indexCount, false);
     indexCount++;
-  }  
-  
+  }
+
   colorLayout->addRow(new QLabel(tr("Color Representation:")), colorRepComboBox);
   colorLayout->addRow(new QLabel(tr("Current Setting:")), colorRepTabBar);
   colorGroupBox->setLayout(colorLayout);
@@ -237,7 +237,7 @@ void MainWindow::createVisualSettingsGroupBox()
   landscapeCheckBox = new QCheckBox("Landscape");
   portraitCheckBox->setEnabled(false);
   landscapeCheckBox->setEnabled(false);
-  
+
   // Connect the two landscape/portrait buttons to their own callback functions
   connect(portraitBtn,SIGNAL(clicked()),this,SLOT(UpdatePortraitCheckbox()));
   connect(landscapeBtn,SIGNAL(clicked()),this,SLOT(UpdateLandscapeCheckbox()));
@@ -248,7 +248,7 @@ void MainWindow::createVisualSettingsGroupBox()
   checkBoxLayout->addWidget(landscapeCheckBox);
   landscapeLayout->addRow(new QLabel(tr("Image Orientation:")), buttonLayout);
   landscapeLayout->addRow(new QLabel(tr("Current Setting:")), checkBoxLayout);
-  
+
   landscapeGroupBox->setLayout(landscapeLayout);
 
   visualSettingsLayout->addWidget(methodGroupBox);
@@ -257,19 +257,19 @@ void MainWindow::createVisualSettingsGroupBox()
 }
 
 void MainWindow::createImageSettingsGroupBox()
-{  
+{
   imageSettingsLayout = new QVBoxLayout;
 
 
   imageSizeGroupBox = new QGroupBox(tr("Image Size"));
   QFormLayout *sizeLayout = new QFormLayout;
-  
-  sizeDial = new QDial;  
+
+  sizeDial = new QDial;
   imageSizeLCD = new QLCDNumber;
-  
+
   // size dial and size LCD directly connected
   connect(sizeDial,SIGNAL(valueChanged(int)),imageSizeLCD,SLOT(display(int)));
-  
+
   sizeDial->setMinimum(50);
   sizeDial->setMaximum(100);
   imageSizeLCD->setPalette(Qt::red);
@@ -281,14 +281,14 @@ void MainWindow::createImageSettingsGroupBox()
   QFormLayout *brightnessLayout = new QFormLayout;
   brightnessSlider = new QSlider;
   brightnessProgressBar = new QProgressBar;
-  
+
   // Link brightness slider with its progress bar display
   // This was done in a custom function to allow for the numeric brightness value to be displayed
   // alongside the progressbar "precentage"
   connect(brightnessSlider,SIGNAL(valueChanged(int)),this,SLOT(UpdateBrightnessBar()));
-  
+
   // Initialize brightness progress bar display and various widget settings
-  UpdateBrightnessBar();  
+  UpdateBrightnessBar();
   brightnessSlider->setOrientation(Qt::Horizontal);
   brightnessSlider->setTickPosition(QSlider::TicksBothSides);
   brightnessSlider->setTickInterval(10);
@@ -297,7 +297,7 @@ void MainWindow::createImageSettingsGroupBox()
   brightnessSlider->setMaximum(255);
   brightnessProgressBar->setMinimum(0);
   brightnessProgressBar->setMaximum(255);
-  
+
   brightnessLayout->addRow(new QLabel(tr("Image Brightness:")), brightnessSlider);
   brightnessLayout->addRow(new QLabel(tr("Current Setting:")), brightnessProgressBar);
   imageBrightnessGroupBox->setLayout(brightnessLayout);
@@ -305,7 +305,7 @@ void MainWindow::createImageSettingsGroupBox()
   imageSettingsLayout->addWidget(imageBrightnessGroupBox);
   imageSettingsLayout->addWidget(imageSizeGroupBox);
 }
-  
+
 
 
 // Various slot functions:
@@ -314,6 +314,16 @@ void MainWindow::UpdateMethodLineEdit()
   for (int i = 0; i < NUM_BUTTONS; ++i) {
     if (methodButtons[i]->isChecked()) {
       methodEdit->setText(methodLabels[i]);
+      bool ok;
+      if (i < 4) {
+        QString text = QInputDialog::getText(this, tr("Please enter a SSM file's name."),
+                                         tr("Filename:"), QLineEdit::Normal,
+                                         tr("filename.ssm"), &ok);
+       } elseif (i == 4) {
+         QString text = QInputDialog::getText(this, tr("Please enter a PPM file's name."),
+                                          tr("Filename:"), QLineEdit::Normal,
+                                          tr("filename.ssm"), &ok);
+        }
     }
   }
 }
