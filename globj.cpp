@@ -12,12 +12,14 @@
 GLobj::GLobj(QWidget *parent)
     : QGLWidget(parent)
 {
-
+  data = NULL;
+  methodType = -1;
 }
 
 GLobj::~GLobj()
 {
-
+  if (data != NULL)
+    delete [] data;
 }
 
 //Initialize the GL settings
@@ -55,21 +57,46 @@ void GLobj::paintGL()
 {
     glClear (GL_COLOR_BUFFER_BIT);
     glClear(GL_DEPTH_BUFFER_BIT);
+    glFlush ();
+
+    if (methodType == 0)
+      methodA();
 
 
 
 
-    glPointSize(4.0f);
-    glLineWidth(2.0f);
-    unsigned int data[2] = {2, 20};
-methodA(data,1,1);
-     glFlush ();
+
 }
 
-void GLobj::methodA(unsigned int data[], int numSamples, int maxValue) {
-    glBegin(GL_TRIANGLES);
-    glVertex3f(-1.0f,-1.0f,-1.0f);
-    glVertex3f(-0.25f,-0.25f,-0.25f);
-    glVertex3f(-0.75f,-1.0f,-1.0f);
-    glEnd();
+void GLobj::methodA() {
+  glClear (GL_COLOR_BUFFER_BIT);
+  glClear(GL_DEPTH_BUFFER_BIT);
+  glPointSize(4.0f);
+  glLineWidth(2.0f);
+    float currentX = -1;
+    float totalX = 0;
+    for (int i = 0; i < numValues; i++) {
+      float proportionalSize = (float) *(data + i) / (float) maxValue;
+      totalX += proportionalSize;
+      qDebug() << "Loop1-- Index:" << i << " data[i]:" << *(data + i) << " proportionalSize:" << proportionalSize;
+      currentX += proportionalSize;
+
+
+    }
+    currentX = -1.0;
+    float scaleFactor = 2.0/totalX;
+    qDebug() << "Checking:: TotalX:" << totalX << " 2/totalX" << scaleFactor;
+    for (int i = 0; i < numValues; i++) {
+      float proportionalSize = ((float) *(data + i) / (float) maxValue) * (float) scaleFactor;
+      qDebug() << "Loop2-- Index:" << i << " data[i]:" << *(data + i) << " proportionalSize:" << proportionalSize;
+      glBegin(GL_TRIANGLES);
+      glVertex3f(currentX,-1.0f,1.0f);
+
+      glVertex3f(((currentX+(proportionalSize/2))),(-1 + proportionalSize),1.0f);
+      glVertex3f((currentX + proportionalSize),-1.0f,1.0f);
+      glEnd();
+      currentX += proportionalSize;
+      glFlush ();
+  }
+
 }

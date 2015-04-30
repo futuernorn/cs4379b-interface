@@ -15,13 +15,17 @@ class GLobj : public QGLWidget  {
 public:
     GLobj(QWidget *parent = 0);
     ~GLobj();
+    unsigned int *data;
+    int numValues;
+    int maxValue;
+    int methodType;
 
 protected:
     void initializeGL();
     void resizeGL(int w, int h);
     void paintGL();
     void ngon(int n);
-    void methodA(unsigned int data[], int numSamples, int maxValue);
+    void methodA();
 };
 
 #endif

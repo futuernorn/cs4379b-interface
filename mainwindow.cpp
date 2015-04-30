@@ -27,6 +27,10 @@ MainWindow::MainWindow()
 
 }
 
+MainWindow::~MainWindow() {
+  // delete [] data;
+}
+
 void MainWindow::newFile()
 {
   QMessageBox msgBox;
@@ -183,7 +187,7 @@ void MainWindow::createVisualSettingsGroupBox()
 
   // initialize method display widget
   methodEdit = new QLineEdit;
-  methodEdit->setText(methodLabels[0]);
+  methodEdit->setText("--");
   formLayout->addRow(new QLabel(tr("Current Method:")), methodEdit);
 
   QString label;
@@ -195,7 +199,7 @@ void MainWindow::createVisualSettingsGroupBox()
     buttonLayout->addWidget(methodButtons[i]);
   }
   // select the first method by default
-  methodButtons[0]->setChecked(true);
+  // methodButtons[0]->setChecked(true);
 
   methodLayout->addLayout(buttonLayout);
   methodLayout->addLayout(formLayout);
@@ -315,16 +319,19 @@ void MainWindow::UpdateMethodLineEdit()
     if (methodButtons[i]->isChecked()) {
       methodEdit->setText(methodLabels[i]);
       bool ok;
+      QString filename = "";
       if (i < 4) {
-        QString text = QInputDialog::getText(this, tr("Please enter a SSM file's name."),
+         filename = QInputDialog::getText(this, tr("Please enter a SSM file's name."),
                                          tr("Filename:"), QLineEdit::Normal,
-                                         tr("filename.ssm"), &ok);
+                                         tr("test.ssm"), &ok);
        } else if (i == 4) {
-         QString text = QInputDialog::getText(this, tr("Please enter a PPM file's name."),
+          filename = QInputDialog::getText(this, tr("Please enter a PPM file's name."),
                                           tr("Filename:"), QLineEdit::Normal,
-                                          tr("filename.ssm"), &ok);
+                                          tr("test.ppm"), &ok);
         }
-    }
+        loadSSMFile("test.ssm");
+        break;
+  }
   }
 }
 
@@ -351,4 +358,51 @@ void MainWindow::UpdateLandscapeCheckbox()
   globj->setFixedSize(400, 600);
   portraitCheckBox->setChecked(false);
   landscapeCheckBox->setChecked(true);
+}
+
+void MainWindow::loadSSMFile(QString filename) {
+  QFile inputFile(filename);
+  qDebug() << "filename: " << filename;
+  if (inputFile.open(QIODevice::ReadOnly))
+  {
+
+     QTextStream in(&inputFile);
+
+     qDebug() << "file openeded";
+     QString line = in.readLine();
+     qDebug() << "Line: " << line;
+     if (line != "S2")
+      qCritical() << "File all wrong man1!!";
+     while (!in.atEnd())
+     {
+        line = in.readLine();
+        qDebug() << "Line: " << line;
+        if (line.left(1) == "#")
+          continue;
+        else
+          break;
+
+     }
+     QStringList metaData = line.split(QRegExp("\\s"));
+     int numValues = metaData[0].toInt();
+     int maxValue = metaData[1].toInt();
+     line = in.readLine();
+     qDebug() << "Line: " << line;
+     QStringList data = line.split(QRegExp("\\s"));
+     globj->data = new unsigned int[numValues];
+
+     int index = 0;
+     foreach (QString point, data) {
+       qDebug() << "Index:" << index << " toUInt():" << point.toUInt();
+       data[index] = point.toUInt();
+       index++;
+     }
+     globj->maxValue = maxValue;
+     globj->numValues = numValues;
+     globj->methodType = 0;
+     inputFile.close();
+     globj->update();
+  } else {
+    qCritical() << "File unable to be opened!";
+  }
 }

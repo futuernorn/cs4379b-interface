@@ -27,17 +27,18 @@ class QCheckBox;
 class MainWindow : public QMainWindow
 {
   Q_OBJECT
-  
+
  public:
   MainWindow();
+  ~MainWindow();
 
   private slots:
-     
+
     void newFile();
     void open();
     void save();
     void help();
-        
+
     void UpdateMethodLineEdit();
     void UpdateBrightnessBar();
     void UpdateColorTabBar();
@@ -45,6 +46,7 @@ class MainWindow : public QMainWindow
     void UpdateLandscapeCheckbox();
 
  private:
+    void loadSSMFile(QString);
     void createActions();
     void createMenus();
     void createStatusBar();
@@ -52,11 +54,11 @@ class MainWindow : public QMainWindow
 
     QTextEdit *textEdit;
     GLobj *globj;
-    
+
     QMenu *fileMenu;
     QMenu *viewMenu;
     QMenu *helpMenu;
-     
+
     QAction *newAct;
     QAction *openAct;
     QAction *saveAct;
@@ -69,11 +71,11 @@ class MainWindow : public QMainWindow
 
     QList<QString> methodLabels;
     QList<QString> colorRepOptions;
-        
+
     QVBoxLayout *imageSettingsLayout;
     QVBoxLayout *visualSettingsLayout;
-    QGroupBox *methodGroupBox;  
-    QRadioButton *methodButtons[NUM_BUTTONS];    
+    QGroupBox *methodGroupBox;
+    QRadioButton *methodButtons[NUM_BUTTONS];
     QLineEdit *methodEdit;
 
     QGroupBox *imageSizeGroupBox;
@@ -83,16 +85,18 @@ class MainWindow : public QMainWindow
     QGroupBox *imageBrightnessGroupBox;
     QSlider *brightnessSlider;
     QProgressBar *brightnessProgressBar;
-    
+
     QGroupBox *colorGroupBox;
-    QComboBox *colorRepComboBox;     
+    QComboBox *colorRepComboBox;
     QTabBar *colorRepTabBar;
-    
-    QGroupBox *landscapeGroupBox;    
+
+    QGroupBox *landscapeGroupBox;
     QPushButton *portraitBtn;
     QPushButton *landscapeBtn;
     QCheckBox *portraitCheckBox;
     QCheckBox *landscapeCheckBox;
+
+    unsigned int *data;
 
 };
 
